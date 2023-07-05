@@ -19,11 +19,8 @@ class Cart:
 
         if override_quantity:
             self.cart[product_id]['quantity'] = quantity
-            print('override is true', quantity)
         else:
             self.cart[product_id]['quantity'] += quantity
-            print('override is false', quantity, 'realquantity is',
-                  self.cart[product_id]['quantity'])
         self.save()
 
     def save(self):

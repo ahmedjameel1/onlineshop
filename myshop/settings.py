@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'celery',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 CART_SESSION_ID = 'cart'
+
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+
+
+# Stripe settings
+STRIPE_PUBLISHABLE_KEY = ''  # Publishable key
+STRIPE_SECRET_KEY = ''  # Secret key
+STRIPE_API_VERSION = '2022-08-01'
