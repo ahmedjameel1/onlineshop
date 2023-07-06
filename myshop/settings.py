@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'celery',
     'payment.apps.PaymentConfig',
+    'coupons.apps.CouponsConfig',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
@@ -142,3 +144,5 @@ CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
 STRIPE_PUBLISHABLE_KEY = ''  # Publishable key
 STRIPE_SECRET_KEY = ''  # Secret key
 STRIPE_API_VERSION = '2022-08-01'
+
+STRIPE_WEBHOOK_SECRET = ''
