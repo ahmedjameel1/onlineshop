@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -112,7 +113,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Spanish'),
+]
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -146,3 +150,7 @@ STRIPE_SECRET_KEY = ''  # Secret key
 STRIPE_API_VERSION = '2022-08-01'
 
 STRIPE_WEBHOOK_SECRET = ''
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
